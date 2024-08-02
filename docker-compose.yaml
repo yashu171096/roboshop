@@ -12,7 +12,6 @@ services:
     - mongodb
   redis: 
     image: "redis"
-    container_name: "redis"
   user:
     image: "user:v1"
     container_name: "user"
