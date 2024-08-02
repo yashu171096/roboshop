@@ -1,4 +1,4 @@
- 
+version: "3.9" 
 networks:
   roboshop:
     driver: "bridge"
@@ -7,8 +7,8 @@ services:
     image: "mongodb:v1"
     container_name: "mongodb"
   catalogue:
-    image: catalogue:v1
-    container_name: catalogue
+    image: "catalogue:v1"
+    container_name: "catalogue"
     depends_on:
     - mongodb
   redis: 
