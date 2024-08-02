@@ -3,12 +3,12 @@ networks:
     driver: bridge
 services:
   mongodb:
-    image: mongodb:v1
-    container_name: mongodb
+   image: mongodb:v1
+   container_name: mongodb
   catalogue:
-    image: catalogue:v1
-    container_name: catalogue
-    depends_on:
+   image: catalogue:v1
+   container_name: catalogue
+   depends_on:
     - mongodb
   redis: 
     image: redis
