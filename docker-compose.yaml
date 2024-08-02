@@ -39,11 +39,9 @@ services:
     ports:
     - "80:80"
     depends_on:
-    - mongodb
     - catalogue
     - user
     - cart
     - shipping
     - mysql
-    - redis
 
