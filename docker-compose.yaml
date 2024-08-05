@@ -45,6 +45,8 @@ services:
     - cart
     - shipping
     - mysql
+    - payment
+    - ratings
   rabbitmq:
     image: rabbitmq
     container_name: rabbitmq
@@ -58,4 +60,3 @@ services:
     container_name: ratings 
     depends_on:
     - mysql   
-    
