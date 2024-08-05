@@ -3,10 +3,10 @@ networks:
     driver: bridge
 services:
   mongodb:
-    image: yashwanth24710/mongo:v1
+    image: mongo:v1
     container_name: mongodb
   catalogue:
-    image: yashwanth24710/catalogue:v1
+    image: catalogue:v1
     container_name: catalogue
     depends_on:
     - mongodb
@@ -14,27 +14,27 @@ services:
     image: redis
     container_name: redis
   user:
-    image: yashwanth24710/user:v1
+    image: user:v1
     container_name: user
     depends_on: 
     - mongodb
     - redis    
   cart:
-    image: yashwanth24710/cart:v1
+    image: cart:v1
     container_name: cart
     depends_on:
     - catalogue
     - redis
   mysql:
-    image: yashwanth24710/mysql:v1
+    image: mysql:v1
     container_name: mysql
   shipping:
-    image: yashwanth24710/shipping:v1
+    image: shipping:v1
     container_name: shipping
     depends_on:
     - mysql         
   web:
-    image: yashwanth24710/web:v1
+    image: web:v1
     container_name: web
     ports:
     - "80:80"
@@ -50,12 +50,12 @@ services:
     image: rabbitmq
     container_name: rabbitmq
   payment:
-    image: yashwanth24710/payment:v1
+    image: payment:v1
     container_name: payment
     depends_on:
     - rabbitmq
   ratings:
-    image: yashwanth24710/ratings:v1
+    image: ratings:v1
     container_name: ratings 
     depends_on:
     - mysql   
